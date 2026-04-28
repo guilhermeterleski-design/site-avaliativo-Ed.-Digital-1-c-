@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problemas Ambientais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header role="banner">
+    <div class="container">
+      <h1>Problemas Ambientais</h1>
+      <nav aria-label="Menu principal">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#impactos">Impactos</a></li>
+          <li><a href="#acoes">Ações</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+        </ul>
+      </nav>
+      <button id="toggle-contrast" aria-pressed="false">Alto Contraste</button>
+      <button id="font-increase">A+</button>
+      <button id="font-decrease">A-</button>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="scroll-reveal" aria-labelledby="sobre-title">
+      <h2 id="sobre-title">Sobre os Problemas Ambientais</h2>
+      <p>Conheça os principais desafios que o planeta enfrenta devido às atividades humanas.</p>
+    </section>
+
+    <!-- Seção de Impactos (cards renderizados dinamicamente) -->
+    <section id="impactos" class="scroll-reveal" aria-labelledby="impactos-title">
+      <h2 id="impactos-title">Impactos no Meio Ambiente</h2>
+      <div class="cards-container" id="cards-container" role="list"></div>
+    </section>
+
+    <!-- Seção de Ações (acordeão) -->
+    <section id="acoes" class="scroll-reveal" aria-labelledby="acoes-title">
+      <h2 id="acoes-title">Como Ajudar</h2>
+      <div class="accordion" id="accordion"></div>
+    </section>
+
+    <!-- Seção Galeria (carrossel) -->
+    <section id="galeria" class="scroll-reveal" aria-labelledby="galeria-title">
+      <h2 id="galeria-title">Galeria</h2>
+      <div class="carousel">
+        <button class="prev" aria-label="Slide anterior">&lt;</button>
+        <div class="carousel-track" id="carousel-track"></div>
+        <button class="next" aria-label="Próximo slide">&gt;</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer role="contentinfo">
+    <p>&copy; 2026 Problemas Ambientais. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
