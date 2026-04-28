@@ -1,0 +1,230 @@
+/* ===========================
+   DESIGN SYSTEM: Variáveis
+=========================== */
+:root {
+  /* Paleta de cores */
+  --color-primary: #2a9d8f;
+  --color-secondary: #e9c46a;
+  --color-background: #fefefe;
+  --color-text: #333333;
+  --color-accent: #e76f51;
+
+  /* Alto contraste */
+  --color-bg-contrast: #000000;
+  --color-text-contrast: #ffffff;
+
+  /* Espaçamentos */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+
+  /* Bordas */
+  --radius: 8px;
+
+  /* Tipografia */
+  --font-base: 'Arial', sans-serif;
+  --font-size-base: 16px;
+  --font-size-scale: 1.125; /* 18px */
+}
+
+/* ===========================
+   RESET E BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--space-md) 0;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+header nav a {
+  color: white;
+  font-weight: bold;
+}
+
+header button {
+  margin-left: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* ===========================
+   SEÇÕES
+=========================== */
+section {
+  padding: var(--space-xl) 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+}
+
+/* ===========================
+   CARDS (Impactos)
+=========================== */
+.cards-container {
+  display: grid;
+  gap: var(--space-lg);
+  /* Mobile-first: 1 coluna */
+  grid-template-columns: 1fr;
+}
+
+/* Para telas maiores */
+@media(min-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* Ajustável */
+  }
+}
+
+@media(min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr); /* Ajustável */
+  }
+}
+
+.card {
+  background-color: var(--color-secondary);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   ACORDEÃO
+=========================== */
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+  cursor: pointer;
+  padding: var(--space-md);
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius);
+}
+
+.accordion-content {
+  display: none;
+  padding: var(--space-md);
+  background-color: #f0f0f0;
+  border-radius: var(--radius);
+}
+
+/* ===========================
+   CARROSSEL
+=========================== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.carousel button.prev,
+.carousel button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-accent);
+  border: none;
+  padding: var(--space-sm);
+  border-radius: var(--radius);
+  color: white;
+  cursor: pointer;
+}
+
+.carousel button.prev { left: var(--space-sm); }
+.carousel button.next { right: var(--space-sm); }
+
+/* ===========================
+   SCROLL REVEAL
+=========================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   ALTO CONTRASTE
+=========================== */
+body.high-contrast {
+  background-color: var(--color-bg-contrast);
+  color: var(--color-text-contrast);
+}
+
+body.high-contrast a {
+  color: var(--color-text-contrast);
+}
+
+body.high-contrast header {
+  background-color: var(--color-text-contrast);
+  color: var(--color-bg-contrast);
+}
+
+/* ===========================
+   RESPONSIVIDADE GERAL
+=========================== */
+@media(max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
